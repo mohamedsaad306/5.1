@@ -15,36 +15,47 @@
 	}
 </style>
 
-{!! Form::open(['url'=>'canidates/store']) !!}
+{!! Form::open(array('url'=>'canidates/store',  'files' => true ,'novalidate' => 'novalidate',"enctype"=>"multipart/form-data")) !!}
+
+{!! Form::file('photo') !!}
+
 <div class="form-inline" style="direction: rtl;" >
-	
 
-<!-- <form class="form-inline"  style="direction:rtl;" > -->
+
+            <!-- <form class="form-inline"  style="direction:rtl;" > -->
+
 <!-- Form Name -->
-<legend>مرشح جديد </legend>
+    <legend>مرشح جديد </legend>
 
-<!-- Text input-->
+            <!-- Text input-->
 
-<div class="col-md-2" id="labelSpacing">  <label class="" for="name">اسم المرشح </label> </div>  
-   <input id="name" name="name" type="text" placeholder="placeholder" class="form-control input-md" required=""> 
-<br><br>
-
-<!-- Text input-->
-<div class="col-md-2" id="labelSpacing">
-  <label class="" for="phone">رقم الهاتف</label>  
-</div>
-  <input id="phone" name="phone" type="text" placeholder="\" class="form-control input-md">
+    <div class="col-md-2" id="labelSpacing">  <label class="" for="name">اسم المرشح </label> </div>
+    <input id="name" name="name" type="text" placeholder="placeholder" class="form-control input-md" required="">
     <br><br>
 
-<!-- Text input-->
-  <div class="col-md-2" id="labelSpacing">
-  <label class="" for="adress">العنوان</label>  
-</div>
-  <input id="adress" name="adress" type="text" placeholder="" class="form-control input-md" style="width: 45%;">
-<br><br>
-<!-- Select Basic -->
-  <div class="col-md-2" id="labelSpacing">
-  <label class="" for="enroll_type">enroll_type</label>
+
+    {{--<input name="thefile2" type="file">--}}
+    <br><br><br>
+    <hr>
+
+
+
+            <!-- Text input-->
+    <div class="col-md-2" id="labelSpacing">
+        <label class="" for="phone">رقم الهاتف</label>
+    </div>
+    <input id="phone" name="phone" type="text" placeholder="\" class="form-control input-md">
+    <br><br>
+
+            <!-- Text input-->
+    <div class="col-md-2" id="labelSpacing">
+        <label class="" for="adress">العنوان</label>
+    </div>
+    <input id="adress" name="adress" type="text" placeholder="" class="form-control input-md" style="width: 45%;">
+    <br><br>
+            <!-- Select Basic -->
+    <div class="col-md-2" id="labelSpacing">
+        <label class="" for="enroll_type">enroll_type</label>
     </div>
     <select id="enroll_type" name="enroll_type" class="form-control">
       <option value="عمال">عمال</option>
@@ -122,7 +133,8 @@
 <br><br>
 <!-- Button -->
   <div class="col-md-4">
-    <button id="singlebutton" name="singlebutton" class="btn btn-inverse">تسجيل المرشح</button>
+      {!! Form::submit('تسجيل المرشح!') !!}
+      {{--<button id="singlebutton" name="singlebutton" class="btn btn-inverse">تسجيل المرشح</button>--}}
 <!-- </form> -->
 </div>
 {!! Form::close() !!}

@@ -20,6 +20,7 @@ class Canidates extends Model
     'election_ico',
     'campaign_solgan',
     'campaign_program',
+        'image',
     ];
     
 }
